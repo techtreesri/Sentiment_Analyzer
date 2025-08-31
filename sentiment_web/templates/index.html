@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Sentiment Analyzer</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .box {
+      border: 2px solid #00ff00;
+      width: 50%;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px #00ff00;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      background: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: black;
+      border: 1px solid #00ff00;
+      color: #00ff00;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background: #00ff00;
+      color: black;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .blink {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🕹 Retro Sentiment Analyzer 🕹</h1>
+    <form method="POST">
+  <input type="text" name="sentence" placeholder="Type your sentence here..." value="">
+  <br>
+  <input type="submit" value="Analyze">
+</form>
+
+
+    {% if sentiment %}
+      <div class="result">
+        <span class="blink">Result: {{ sentiment }}</span>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
